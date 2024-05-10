@@ -1,0 +1,16 @@
+const mongoose = require('mongoose')
+const { Schema, model } = mongoose
+
+const locationSchema = new Schema({
+    place_id: String, 
+    location: {
+        lat: Number,
+        lng: Number
+    },
+    formatted_address: String,
+    address: String
+}, { timestamps: true })
+
+const Location = model("Location", locationSchema)
+
+module.exports = Location
